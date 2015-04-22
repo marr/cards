@@ -1,9 +1,11 @@
 'use strict';
 import React from 'react';
-import Note from './Note';
+import CreditCardForm from './CreditCardForm';
 
-export default class App extends React.Component {
+module.exports = React.createClass({
     render() {
-        return <Note />;
+        return <div>
+            <CreditCardForm />
+        </div>;
     }
-}
+});
