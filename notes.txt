@@ -5,8 +5,8 @@ Links:
 https://leanpub.com/survivejs_webpack/read
 http://webpack.github.io/docs/webpack-dev-server.html#hot-mode-with-indication
 https://github.com/christianalfoni/react-webpack-cookbook/wiki
+http://christianalfoni.com/articles/2014_12_13_Webpack-and-react-is-awesome
 
 Alternatives:
 Browserify
 Gulp / Grunt
-http://christianalfoni.com/articles/2014_12_13_Webpack-and-react-is-awesome
