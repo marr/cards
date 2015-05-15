@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "nightwatch",
-    "build": "npm i; webpack --config config/",
+    "build": "npm i; webpack --config config/ --display-error-details",
     "hot": "webpack-dev-server --colors --content-base build/ --config config/ --devtool eval --inline --hot --https --progress"
   },
   "repository": {

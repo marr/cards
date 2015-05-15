@@ -7,11 +7,11 @@ var bower_dir = ROOT_PATH + '/bower_components';
 var config = {
     addVendor: function (name, path) {
         this.resolve.alias[name] = path;
-        this.module.noParse.push(new RegExp('^' + name + '$'));
+        this.module.noParse.push(new RegExp(path));
     },
     entry: {
-        app: './app/main.js',
-        vendors: 'react'
+        app: path.join(ROOT_PATH, 'app/main.js'),
+        vendors: ['react']
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js')

@@ -1,4 +1,4 @@
-Webpack - asset builder for web bundles. 
+Webpack - asset builder for web bundles.
 Used to quickly create minified assets, transpile React and ES6 code, any type of loader you can think of (CSS, Image, HTML Generation, etc).
 
 Links:
