@@ -6,7 +6,7 @@
   "scripts": {
     "test": "nightwatch",
     "build": "webpack --config config/",
-    "dev": "webpack-dev-server --config config/ --inline --hot --progress --colors --content-base build/"
+    "hot": "webpack-dev-server --colors --content-base build/ --config config/ --devtool eval --inline --hot --https --progress"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,7 @@
     "babel-core": "^5.1.11",
     "babel-loader": "^5.0.0",
     "css-loader": "^0.10.1",
+    "debug": "^2.2.0",
     "lodash": "^3.7.0",
     "nightwatch": "^0.6.4",
     "react-hot-loader": "^1.2.5",
@@ -36,6 +37,7 @@
     "webpack-dev-server": "^1.8.2"
   },
   "dependencies": {
+    "classnames": "^2.1.1",
     "react": "^0.13.2",
     "tcomb": "^1.0.1",
     "tcomb-form": "^0.4.10",

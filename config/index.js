@@ -1,7 +1,21 @@
 var path = require('path');
 var ROOT_PATH = path.resolve(__dirname, '..');
-module.exports = {
-    entry: [path.join(ROOT_PATH, 'app/main.jsx')],
+var webpack = require('webpack');
+
+var bower_dir = ROOT_PATH + '/bower_components';
+
+var config = {
+    addVendor: function (name, path) {
+        this.resolve.alias[name] = path;
+        this.module.noParse.push(new RegExp('^' + name + '$'));
+    },
+    entry: {
+        app: './app/main.js',
+        vendors: 'react'
+    },
+    plugins: [
+        new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js')
+    ],
     output: {
         path: path.resolve(ROOT_PATH, 'build'),
         filename: 'bundle.js',
@@ -21,8 +35,14 @@ module.exports = {
             test: /\.css$/,
             loaders: ['style', 'css'],
         }],
+        noParse: [],
     },
     resolve: {
+        alias: {},
         extensions: ['', '.js', '.jsx'],
     }
-}
+};
+
+config.addVendor('react', bower_dir + '/react/react.min.js');
+
+module.exports = config;

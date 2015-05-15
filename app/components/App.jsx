@@ -1,11 +1,11 @@
 'use strict';
 import React from 'react';
-import CreditCardForm from './CreditCardForm';
+import Note from './Note';
 
 module.exports = React.createClass({
     render() {
         return <div>
-            <CreditCardForm />
+            <Note name="Webpack" />
         </div>;
     }
 });
