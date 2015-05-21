@@ -9,8 +9,9 @@ var config = {
         this.resolve.alias[name] = path;
         this.module.noParse.push(new RegExp(path));
     },
+    bail: true,
     entry: {
-        app: path.join(ROOT_PATH, 'app/main.js'),
+        app: './app/main.js',
         vendors: ['react']
     },
     plugins: [
