@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "nightwatch",
-    "build": "npm i; webpack --config config/ --display-error-details",
-    "hot": "webpack-dev-server --colors --content-base build/ --config config/ --devtool eval --inline --hot --https --progress"
+    "build": "npm i; webpack --config config/",
+    "dev": "webpack-dev-server --config config/ --https --inline --hot --progress --colors --content-base build/"
   },
   "repository": {
     "type": "git",
