@@ -29,21 +29,29 @@ var config = {
             // use babel loader
             loader: 'babel',
 
-                // operate only on our app directory
+            // operate only on our app directory
             include: path.join(ROOT_PATH, 'app'),
         },
         {
             test: /\.css$/,
             loaders: ['style', 'css'],
+        },
+        {
+            test: /\.styl$/,
+            loader: 'style-loader!css-loader!stylus-loader'
         }],
         noParse: [],
     },
     resolve: {
         alias: {},
         extensions: ['', '.js', '.jsx'],
+    },
+    devServer: {
+        quiet: false
     }
 };
 
-config.addVendor('react', bower_dir + '/react/react.min.js');
+//config.addVendor('react', bower_dir + '/react/react.min.js');
+config.addVendor('react', bower_dir + '/react/react.js');
 
 module.exports = config;
