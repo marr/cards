@@ -19,7 +19,6 @@ module.exports = React.createClass({
        return {
             focus: false,
             prettyDate: '',
-            selected: this.props.selected
         };
     },
 
@@ -29,7 +28,7 @@ module.exports = React.createClass({
             focus: false,
             prettyDate: moment.fromNow(true)
         });
-        this.props.onChange(dateString);
+        this.props.onChange(moment);
     },
 
     handleSelect: function(dateText, moment) {

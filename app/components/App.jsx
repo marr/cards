@@ -1,8 +1,11 @@
 'use strict';
 import React from 'react';
-import { Form, HiddenInput } from 'newforms';
-const DatePicker = require('react-date-picker');
+import { Form, CharField, HiddenInput } from 'newforms';
 const CalendarFieldset  = require('./CalendarFieldset');
+
+//const CalendarFieldset  = require('./DatePickerField');
+
+
 
 const TestForm = Form.extend({
     clean: function() {
@@ -27,12 +30,12 @@ module.exports = React.createClass({
         this.forceUpdate();
     },
 
-    onDateChange(dateString) {
-        this.state.form.updateData({ date: dateString });
+    onDateChange(moment) {
+        this.state.form.updateData({ date: moment.format() });
     },
     render() {
         return <form>
-            <CalendarFormSet onChange={this.onDateChange} />
+            <CalendarFieldset onChange={this.onDateChange} />
             {JSON.stringify(this.state.form.cleanedData)}
         </form>;
     }
