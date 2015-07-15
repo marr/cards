@@ -1,5 +1,6 @@
 import React from 'react';
 const DatePicker = require('react-datepicker');
+const moment = require('moment');
 
 require('react-datepicker/dist/react-datepicker.css');
 
@@ -19,11 +20,6 @@ module.exports = React.createClass({
         };
     },
 
-    componentDidMount: function() {
-        debugger;
-        this.setState({ startDate: this.refs.datePicker.getValue() })
-    },
-
     handleDateChange(moment) {
         this.setState({
             selected: moment,
@@ -37,7 +33,7 @@ module.exports = React.createClass({
         return (<DatePicker
             selected={this.state.selected}
             dateFormat=""
-            minDate={this.state.startDate}
+            minDate={moment()}
             onChange={this.handleDateChange}
             ref='datePicker'
             weekdays={['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']}
