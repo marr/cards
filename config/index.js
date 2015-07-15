@@ -37,6 +37,10 @@ var config = {
             loaders: ['style', 'css'],
         },
         {
+            test: /\.scss$/,
+            loader: "style!css!sass"
+        },
+        {
             test: /\.styl$/,
             loader: 'style-loader!css-loader!stylus-loader'
         }],

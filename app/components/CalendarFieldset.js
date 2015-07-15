@@ -1,8 +1,8 @@
 const React = require('react');
 const DatePicker = require('react-date-picker');
-const newforms = require('newforms')
 
-require('react-date-picker/index.styl');
+//require('react-date-picker/index.styl');
+require('../stylesheets/CalendarFieldset.scss');
 let date = Date.now();
 const startDate = new Date(date);
 startDate.setDate(startDate.getDate() - 1);
