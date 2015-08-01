@@ -37,8 +37,6 @@
   border-bottom: 1px solid $border-color;
   border-top-left-radius: $border-radius;
   border-top-right-radius: $border-radius;
-  padding-top: 8px;
-  position: relative;
 }
 
 .dp-nav-view {
@@ -49,25 +47,30 @@
 
 .dp-nav-table {
   line-height: $item-size;
+  width: 100%;
   text-align: center;
   cursor: pointer;
-  position: absolute;
-  top: 10px;
-  width: 0;
-  border: 6px solid transparent;
 
-  &.dp-prev-nav {
-    left: 10px;
+  .dp-nav-cell {
+      border: 6px solid transparent;
+      padding: 0;
+      position: absolute;
+      top: 8px;
+      width: 0;
+  }
+
+  .dp-prev-nav {
     border-right-color: $muted-color;
+    left: 10px;
 
     &:hover {
       border-right-color: darken($muted-color, 10%);
     }
   }
 
-  &.dp-next-nav {
-    right: 10px;
+  .dp-next-nav {
     border-left-color: $muted-color;
+    right: 10px;
 
     &:hover {
       border-left-color: darken($muted-color, 10%);
@@ -76,14 +79,14 @@
 }
 
 
-.datepicker__week-day {
-  color: $muted-color;
+.dp-week-day-name {
+  /*color: $muted-color;*/
   display: inline-block;
   width: $item-size + (2 * $day-margin);
   line-height: $item-size;
 }
 
-.datepicker__month {
+.dp-month-view {
   margin: $datepicker__margin;
   text-align: center;
 }
